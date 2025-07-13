@@ -1,0 +1,111 @@
+
+/* Estilos tema oscuro minimalista y rodado */
+
+:root {
+  --color-fondo: #121212;
+  --color-texto: #eee;
+  --color-bloqueado: #444;
+  --color-desbloqueado: #bbb;
+  --color-aprobado: #4caf50;
+  --color-borde: #333;
+  --color-hover: #2a2a2a;
+  --radio-boton: 10px;
+  --sombra: 0 3px 6px rgba(0,0,0,0.6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 0 1rem 3rem 1rem;
+}
+
+header {
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-borde);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+#malla-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.semestre {
+  background-color: #1e1e1e;
+  border-radius: var(--radio-boton);
+  box-shadow: var(--sombra);
+  padding: 1rem;
+  border: 1px solid var(--color-borde);
+}
+
+.semestre h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: 0.5rem;
+}
+
+.ramo {
+  background-color: var(--color-bloqueado);
+  color: var(--color-texto);
+  border-radius: var(--radio-boton);
+  padding: 0.7rem 1rem;
+  margin: 0.5rem 0;
+  cursor: not-allowed;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: inset 0 0 3px rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ramo.desbloqueado {
+  background-color: var(--color-desbloqueado);
+  cursor: pointer;
+}
+
+.ramo.aprobado {
+  background-color: var(--color-aprobado);
+  color: #000;
+  text-decoration: line-through;
+  cursor: pointer;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+.ramo .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ramo .nombre {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.ramo .creditos {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.ramo .checkmark {
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.ramo:hover.desbloqueado {
+  background-color: var(--color-hover);
+}
